@@ -68,14 +68,37 @@ Nome definido:gobarber
 # Sequelize 
 ORM para Node.js
 
-# MVC
-Model, View, Controller
-
 # Migrations 
 Controle de versão para base de dados.
 
+É possível desfazer uma migração se errarmos algo enquanto estivermos desenvolvendo a feature.
 
+Depois que a migration foi enviada para outros devs ou para o ambiente de produção, ela jamais pode ser alterada, sendo necessário a criação de uma nova.
 
+Cada migration deve realizar alterações em apenas uma tabela
+
+# Seeds
+População da base de dados
+
+Muito utilizados para testes
+
+# Arquitetura MVC
+Model: Armazenar a abstração do Banco
+
+Controller: Ponto de entrada das requisições. Sempre retorna json. Não chama outro controller.
+
+View: O retorno ao cliente. Pode ser json ou um htm.
+
+# Métodos do controller
+index() //listagem de usuários
+
+show() //Exibir um único usuário
+
+store() //cadastrar um usuário
+
+update() //alterar usuário
+
+delete()//remover usuário
 
 
 
