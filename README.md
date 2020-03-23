@@ -100,7 +100,56 @@ update() //alterar usuário
 
 delete()//remover usuário
 
+# Configurando extrutura de pastas
+Dentro da pasta src foram criadas 3 pastas:App, Config e database.
 
+Na pasta App ficarão as partes de regras de negócio. Dentro dele tem as pastas:Models e Controllers.
+
+Na pasta config ficarão as configurações da aplicação. Nela foi criada um arquivo database.js para configurações do banco de dados.
+
+Na pasta database ficará tudo relativo ao banco de dados.Dentro dela foi criada a pasta migrations.
+
+# Instalando o sequelize
+yarn add sequelize
+
+# Instalando uma interface de linhas de comando do sequelize
+yarn add sequelize--
+
+# Arquivo .sequelizerc
+Ultilizado para exportar os arquivos criados nas já criadas pastas.
+
+Localizado na raíz do projeto
+
+Por questões estéticas e de edição, foi clicado no canto inferior direito em "plain text" para editar como se fosse um arquivo js.
+
+const {resolve}=require('path');
+
+module.exports={
+    config:resolve(__dirname,'src','config','database.js'),
+    'models-path':resolve(__dirname,'src','app','models'),
+    'migrations-path':resolve(__dirname,'src','database','migrations'),
+    'seeders-path':resolve(__dirname,'src','database','seeds'),
+};
+
+# Configurando o arquivo database.js(dentro de config)
+Como estou usando postgres nas configurações, é preciso instalar dependências pelo comando: yarn add pg pg-hstore
+
+Mais informações em https://sequelize.org/v5/manual/dialects.html#postgresql
+
+module.exports={
+    dialect:'postgres',
+    host:'localhost',
+    username:'postgres',
+    passworld:'docker',
+    database:'gobarber',
+    define:{
+        timestamps:true,
+        underscored:true,
+        underscoredAll:true,
+    },
+};
+
+Em define apenas configurações de padronização de nomes de tabelas e colunas
 
 
 
