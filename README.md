@@ -18,7 +18,7 @@ Para executar junto com o nodemon,primeiro foi criado um script "dev":"nodemon s
 } dentro dele. Ele diz que para todo arquivo com extensão "js" que que o node executar, será executado antes outro em sucrase/register(em node modules).
 
 # Docker
-Usado na criação de ambientes isolados(containers), como por exemplo um serviço de banco de dados.
+Usado na criação de ambientes isolados(containers), como por exemplo um serviço de banco de dados. Semelhante a uma máquina virtual(Exemplo da jvm) onde não a preocupação se a tecnologia se adapta ao seu computador/sistema operacional.
 
 Containers expões portas para comunicação.
 
