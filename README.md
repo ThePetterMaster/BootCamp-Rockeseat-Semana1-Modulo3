@@ -33,6 +33,8 @@ Devido a minha versão do windows, tive que ultilizar Docker Toolbox
 
 https://docs.docker.com/toolbox/toolbox_install_windows/
 
+# Observação sobre o Docker
+Os comandos apresentados a seguir só funcionam após eu executar o Docker Quickstart Terminal
 # Comando para criação de uma imagem
 run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 # Comando para ver quais containers estão executando
@@ -113,7 +115,7 @@ Na pasta database ficará tudo relativo ao banco de dados.Dentro dela foi criada
 yarn add sequelize
 
 # Instalando uma interface de linhas de comando do sequelize
-yarn add sequelize--
+yarn add sequelize-cli -d
 
 # Arquivo .sequelizerc
 Ultilizado para exportar os arquivos criados nas já criadas pastas.
@@ -138,7 +140,7 @@ Mais informações em https://sequelize.org/v5/manual/dialects.html#postgresql
 
 module.exports={
     dialect:'postgres',
-    host:'localhost',
+    host:'192.168.99.100',
     username:'postgres',
     passworld:'docker',
     database:'gobarber',
@@ -150,6 +152,22 @@ module.exports={
 };
 
 Em define apenas configurações de padronização de nomes de tabelas e colunas
+
+Obs lembrando que como é pelo toolbox é host:'192.168.99.100'
+
+# Criando a primeira migration da tabela de usuários
+yarn add sequelize migration:create --name=create-users
+
+Foi criado o arquivo 20200323191428-create-users na pasta database/migrations
+
+Foi tirado os comentário de up e down e deixado só os returns. Depois foi colocado os atributos da tabela.
+# Criar as tabelas com as migrates
+yarn sequelize db:migrate
+
+# Desfazer a migration
+yarn sequelize db:migrate:undo
+# Desfazer todas as migrations
+yarn sequelize db:migrate:undo:all
 
 
 
