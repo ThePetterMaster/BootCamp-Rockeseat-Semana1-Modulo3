@@ -25,11 +25,11 @@ module.exports = {
           allowNull:false,
         },
         provider:{
-          typer:Sequelize.BOOLEAN,
+          type:Sequelize.BOOLEAN,
             defaultValue:false,
             allowNull:false,
         },
-        create_at:{
+        created_at:{
           type:Sequelize.DATE,
           allowNull:false,
         },
