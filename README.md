@@ -11,11 +11,15 @@ Comando para instalação: yarn add sucrase -D
 
 Comando para execução: yarn sucrase-node nomearquivo.js
 
-Para executar junto com o nodemon,primeiro foi criado um script "dev":"nodemon src/server.js" em package.json. Depois foi criado um arquivo chamado nodemon.json com {
+Para executar junto com o nodemon,primeiro foi criado um script "dev":"nodemon src/server.js" em package.json. Depois foi criado um arquivo chamado nodemon.json com 
+```
+{
     "execMap":{
         "js":"node -r sucrase/register"
     }
-} dentro dele. Ele diz que para todo arquivo com extensão "js" que que o node executar, será executado antes outro em sucrase/register(em node modules).
+}
+```
+Ele diz que para todo arquivo com extensão "js" que que o node executar, será executado antes outro em sucrase/register(em node modules).
 
 # Docker
 Usado na criação de ambientes isolados(containers), como por exemplo um serviço de banco de dados. Semelhante a uma máquina virtual(Exemplo da jvm) onde não a preocupação se a tecnologia se adapta ao seu computador/sistema operacional.
@@ -123,7 +127,7 @@ Ultilizado para exportar os arquivos criados nas já criadas pastas.
 Localizado na raíz do projeto
 
 Por questões estéticas e de edição, foi clicado no canto inferior direito em "plain text" para editar como se fosse um arquivo js.
-
+```
 const {resolve}=require('path');
 
 module.exports={
@@ -132,12 +136,13 @@ module.exports={
     'migrations-path':resolve(__dirname,'src','database','migrations'),
     'seeders-path':resolve(__dirname,'src','database','seeds'),
 };
+```
 
 # Configurando o arquivo database.js(dentro de config)
 Como estou usando postgres nas configurações, é preciso instalar dependências pelo comando: yarn add pg pg-hstore
 
 Mais informações em https://sequelize.org/v5/manual/dialects.html#postgresql
-
+```
 module.exports={
     dialect:'postgres',
     host:'192.168.99.100',
@@ -150,6 +155,7 @@ module.exports={
         underscoredAll:true,
     },
 };
+```
 
 Em define apenas configurações de padronização de nomes de tabelas e colunas
 
@@ -170,11 +176,29 @@ yarn sequelize db:migrate:undo
 yarn sequelize db:migrate:undo:all
 
 # Instalando bcrypt
+Dependência de encriptação
+
 yarn add bcryptjs
 
 # Autenticação JWT
 É uma forma de autenticação para aplicações RESTfull
 
 JWT: json web token
+
+Basicamente,primeiro é enviado no corpo de uma requisição POST qualquer um json:
+```
+{
+    "email":"UrarakaÉdoMidorya@gmail.com",
+    "password":"quemshippacombakugouédoente"
+}
+```
+Depois disso é verificado no banco de dados.
+
+E por fim é gerado um token com 3 partes:
+- Headers(Tipo do token,algorítimo)
+- Payload(Dados adicionais)
+- Assinatura(Verificar se algo foi alterado)
+
+Mais informações em:https://jwt.io/introduction/
 
 
