@@ -172,4 +172,9 @@ yarn sequelize db:migrate:undo:all
 # Instalando bcrypt
 yarn add bcryptjs
 
+# Autenticação JWT
+É uma forma de autenticação para aplicações RESTfull
+
+JWT: json web token
+
 
