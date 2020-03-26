@@ -201,4 +201,5 @@ E por fim é gerado um token com 3 partes:
 
 Mais informações em:https://jwt.io/introduction/
 
-
+# Instalando a dependência que irá gerar o token
+yarn add jsonwebtoken
