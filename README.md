@@ -170,6 +170,6 @@ yarn sequelize db:migrate:undo
 yarn sequelize db:migrate:undo:all
 
 # Instalando bcrypt
-yarn add bcrypt
+yarn add bcryptjs
 
 
