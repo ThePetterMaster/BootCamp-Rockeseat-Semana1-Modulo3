@@ -251,3 +251,25 @@ O yup é importado como:import * as Yup from 'yup'
 
 # Yup instalação 
 yarn add yup
+
+# Sequência de criação
+
+- Migration de usuário
+
+- Model de usuário
+
+- Criando loader de models
+
+- Cadastro de usuários
+
+- Gerando hash da senha
+
+- Conceitos de JWT
+
+- Autenticação JWT
+
+- Middleware de autenticação
+
+- Update do usuário
+
+- Validando dados de entrada
