@@ -241,7 +241,10 @@ export default{
 }
 ```
 A partir desse "secret", a aplicação irá gerar o token. Assim quando o usuário desejar acessar uma determinada área, irá ser enviado o token no header da requisição e então uma função da biblioteca 'jsonwebtoken' irá verificar se o token foi gerado pelo secret e se ele já foi expirado.
+# Como passar o token nas requisições no Header(ultilizando insomina)
+No Content-Type:Authorization e no application/json:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTU4NTI5ODM3NywiZXhwIjoxNTg1OTAzMTc3fQ.p8Jra_aR5wE5lV467t261JaHjcPOtk6sr26Z6NU4UHw
 
+Ou na parte de Auth e coloca o token
 # Yup
 Biblioteca de Schema Validation.
 
