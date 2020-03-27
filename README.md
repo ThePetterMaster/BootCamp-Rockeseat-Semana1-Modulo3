@@ -241,3 +241,11 @@ export default{
 }
 ```
 A partir desse "secret", a aplicação irá gerar o token. Assim quando o usuário desejar acessar uma determinada área, irá ser enviado o token no header da requisição e então uma função da biblioteca 'jsonwebtoken' irá verificar se o token foi gerado pelo secret e se ele já foi expirado.
+
+# Yup
+Biblioteca de Schema Validation.
+
+Forma de definir os campos da requisição e os tipos.
+
+# Yup instalação 
+yarn add yup
