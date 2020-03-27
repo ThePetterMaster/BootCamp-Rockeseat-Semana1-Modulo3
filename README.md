@@ -199,7 +199,38 @@ E por fim é gerado um token com 3 partes:
 - Payload(Dados adicionais)
 - Assinatura(Verificar se algo foi alterado)
 
+
+
+No meus testes, eu enviei POST na rota /session com o corpo :
+
+```
+{
+    "email":"piromati@gmail.com",
+	"password":"1234"
+}
+```
+E o resultado foi
+```
+  "user": {
+    "id": 12,
+    "name": "Pedro Neto",
+    "email": "piromati@gmail.com"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU4NTI2ODM1MywiZXhwIjoxNTg1ODczMTUzfQ.vO_t4mIk965CD2ZISRGGiyMnRlPe52pqUv1lSWV4NKo"
+}
+```
+
 Mais informações em:https://jwt.io/introduction/
 
 # Instalando a dependência que irá gerar o token
 yarn add jsonwebtoken
+
+# Gerando o token
+Para gerar o token, é preciso que o programador informe um código que tente ser único no mundo.
+No arquivo de configuração(config/auth.js) isso usei o site https://www.md5online.org/ .Utilizei gobarberrockeseatnode2 que gerou e500968f839e14edc5e5c6c4851ff4b1.
+```
+export default{
+    secret:'e500968f839e14edc5e5c6c4851ff4b1',
+    expiresIn:'7d',
+}
+```
