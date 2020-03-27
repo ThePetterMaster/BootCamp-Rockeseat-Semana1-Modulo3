@@ -224,6 +224,8 @@ E o resultado foi
 - Payload(eyJpZCI6MTIsImlhdCI6MTU4NTI2ODM1MywiZXhwIjoxNTg1ODczMTUzfQ)
 - Assinatura(vO_t4mIk965CD2ZISRGGiyMnRlPe52pqUv1lSWV4NKo)
 
+Esse token será usada para questões de login.
+
 Mais informações em:https://jwt.io/introduction/
 
 # Instalando a dependência que irá gerar o token
