@@ -16,4 +16,5 @@ class Database{
         models.map(model=>model.init(this.connection));
     }
 }
+//Essa instancia será executada em app.js
 export default new Database();
