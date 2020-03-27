@@ -247,5 +247,7 @@ Biblioteca de Schema Validation.
 
 Forma de definir os campos da requisição e os tipos.
 
+O yup é importado como:import * as Yup from 'yup'
+
 # Yup instalação 
 yarn add yup
