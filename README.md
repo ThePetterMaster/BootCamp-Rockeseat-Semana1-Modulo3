@@ -220,6 +220,10 @@ E o resultado foi
 }
 ```
 
+- Headers(eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9)
+- Payload(eyJpZCI6MTIsImlhdCI6MTU4NTI2ODM1MywiZXhwIjoxNTg1ODczMTUzfQ)
+- Assinatura(vO_t4mIk965CD2ZISRGGiyMnRlPe52pqUv1lSWV4NKo)
+
 Mais informações em:https://jwt.io/introduction/
 
 # Instalando a dependência que irá gerar o token
