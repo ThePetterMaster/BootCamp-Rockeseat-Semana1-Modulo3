@@ -224,7 +224,7 @@ E o resultado foi
 - Payload(eyJpZCI6MTIsImlhdCI6MTU4NTI2ODM1MywiZXhwIjoxNTg1ODczMTUzfQ)
 - Assinatura(vO_t4mIk965CD2ZISRGGiyMnRlPe52pqUv1lSWV4NKo)
 
-Esse token será usada para questões de login.
+Esse token será usado no envio de requisições. Sendo dever do backend autorizar ou recusar o acesso do usuário a algo analizando o token.
 
 Mais informações em:https://jwt.io/introduction/
 
