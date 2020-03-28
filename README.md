@@ -139,8 +139,10 @@ module.exports={
 ```
 
 # Configurando o arquivo database.js(dentro de config)
-Como estou usando postgres nas configurações, é preciso instalar dependências pelo comando: yarn add pg pg-hstore
-
+Como estou usando postgres nas configurações, é preciso instalar dependências pelo comando: 
+```
+yarn add pg pg-hstore
+```
 Mais informações em https://sequelize.org/v5/manual/dialects.html#postgresql
 ```
 module.exports={
@@ -162,7 +164,7 @@ Em define apenas configurações de padronização de nomes de tabelas e colunas
 Obs lembrando que como é pelo toolbox é host:'192.168.99.100'
 
 # Criando a primeira migration da tabela de usuários
-yarn add sequelize migration:create --name=create-users
+yarn sequelize migration:create --name=create-users
 
 Foi criado o arquivo 20200323191428-create-users na pasta database/migrations
 
