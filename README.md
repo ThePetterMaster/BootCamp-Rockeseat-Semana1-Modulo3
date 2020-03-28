@@ -40,7 +40,7 @@ https://docs.docker.com/toolbox/toolbox_install_windows/
 # Observação sobre o Docker
 Os comandos apresentados a seguir só funcionam após eu executar o Docker Quickstart Terminal
 # Comando para criação de uma imagem
-run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+docker run --name database -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 # Comando para ver quais containers estão executando
 docker ps
 # Comando para ver todos containers parados ou em execução
