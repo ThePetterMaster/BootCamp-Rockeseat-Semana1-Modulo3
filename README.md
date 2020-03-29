@@ -278,3 +278,67 @@ yarn add yup
 - Update do usuário
 
 - Validando dados de entrada
+
+# Minha visão geral do que foi gerado nesse módulo
+
+O sistema tem basicamente 2 requisições post, uma put e um middleware de autenticação(em src/routes.js):
+```
+routes.post('/users',UserController.store);
+routes.post('/sessions',SessionController.store);
+routes.use(authMiddleware);
+routes.put('/users',UserController.update);
+```
+Em "routes.post('/users',UserController.store);" é a rota que recebe por exemplo:
+````
+{
+	"name":"Pedro Neto",
+	"email":"piromaticos@gmail.com",
+	"password":"1234"
+	
+}
+````
+e cadastra esse usuário no banco de dados.
+
+Em "routes.post('/sessions',SessionController.store);" é a rota que recebe por exemplo:
+````
+{
+	"email":"piromaticos@gmail.com",
+	"password":"1234"
+	
+}
+````
+e vai enviar um token com base no id do usuário no banco de dados:
+````
+{
+  "user": {
+    "id": 1,
+    "name": "Pedro Neto",
+    "email": "piromaticos@gmail.com"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg1NDQzMzIxLCJleHAiOjE1ODYwNDgxMjF9.FO_LEAEg0jyQ5Jbzms7L4HhQdGyO5sc0pDj7XsGuinM"
+}
+````
+
+Em "routes.use(authMiddleware);" é um middleware que vai receber o token no header da requisição e verifica se esse token é verdadeiro e se ele ja expirou. Caso não seja verdadeiro o programa retorna:
+````
+{
+  "error":"Token invalid"
+}
+````
+Caso as condições sejam atendidas, o programa irá executar as funções abaixo dele.
+
+Em "routes.put('/users',UserController.update);" ele irá alterar alguma coisa no banco de dados.
+
+# Extrutura MVC e configurações
+Essa parte de inicio foi um pouco difícil de assimilar, mas depois ficou bem simples.
+
+Dentro da pasta src/database possui a pasta migrations e o arquivo index.js. As migrations são basicamente(nesse projeto) para criar a extrutura da tabela(semelhantes aos comando de ddl). O index.js serviu para ligar os models(no caso só teve um) no banco de dados, sendo mais técnico ele irá passar uma variável de conexão para o model. Esse index referencia um arquivo de configuração(src/config/database.js).
+
+Dentro da pasta src/config possui o arquivo auth.js e o arquivo database.js. auth.js contém configurações para geração do token. database.js contém informações do banco de dados como porta,nome,senha etc.
+
+
+
+
+
+
+
