@@ -350,6 +350,8 @@ middlewares() executa express.json() para que o programa reconheça o formato js
 
 routes() executa as rotas
 
+Além disso app.js faz um "import './database'" que executa o arquivo index.js dentro da pasta /database. Esse arquivo conecta a aplicação ao banco de dados que possui as configurações em src/config/database e carrega os models da aplicação.
+
 
 
 
