@@ -339,7 +339,16 @@ Dentro da pasta src/config possui o arquivo auth.js e o arquivo database.js. aut
 A pasta app contém os models,controllers e middlewares. Eu de forma indireta ja falei deles nos tópicos acima, mas resumindo os models irão tem contato diretamente com o banco de dados, eles que possuem funções de busca, inserção, deletar dados etc. Já os controller vão ter acesso aos models e vão dizer aos models que ações eles devem fazer dependendo das requisições. Exemplo a função store do controller UserController é chamada "routes.post('/users',UserController.store);" para cadastrar um usuário no banco de dado, sendo que antes se o corpo da requisição está em um formato correto e se ja existe algum usuário cadastrado. Caso esteja tudo bem o controlador UserController chama a função User.create(req.body); do model user.
 
 
+# Fluxo de execução
+Na pasta src, possui 3 arquivos de scripts de javascript: app.js, routes.js e server.js. Essa pasta também possui 3 pastas: app, config e database.
 
+Ao executar o comando "yarn dev", o node executa server.js que chama uma instância de app.js e executa na porta 3333.
+
+O arquivo app.js tem uma classe(App) que tem um construtor que executa 2 funções:middlewares() e routes(). A classe App tem um atributo server(App.server) que recebe a instância do express e é essa variável que é exportada para server.js.
+
+middlewares() executa express.json() para que o programa reconheça o formato json.
+
+routes() executa as rotas
 
 
 
